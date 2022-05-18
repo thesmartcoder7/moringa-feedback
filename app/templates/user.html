@@ -36,8 +36,8 @@
         </div>
         <div class="user-image">
           <div class="info">
-            <p>Username</p>
-            <a href="">Sign Out</a>
+            <p>{{user.name}}</p>
+            <a href="{{url_for('main.sign_out')}}">Sign Out</a>
           </div>
           <div class="image">
             <img

@@ -105,6 +105,7 @@ main {
 
 #header .user-image .info p {
   font-size: 1vw;
+  text-transform: capitalize;
 }
 
 #header .user-image .info a {
