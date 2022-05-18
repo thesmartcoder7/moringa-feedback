@@ -161,6 +161,7 @@ main {
   width: 55%;
   border-right: 0.1vw solid #fa510f;
   padding: 0 3%;
+  overflow: auto;
 }
 
 #content #main-view .main-content {
@@ -169,14 +170,24 @@ main {
 }
 
 #content #main-view .main-content h1 {
+  margin-top: -1%;
+  width: 100%;
+  background-color: #101f3c;
+  position: fixed;
   color: #fa520fde;
   font-size: 1.5vw;
   text-transform: capitalize;
   margin-bottom: 3%;
   font-weight: 500;
+  padding-bottom: 1%;
+}
+
+#content #main-view .main-content .feedback {
+  overflow: auto;
 }
 
 #content #main-view .main-content .feedback .feedback-div {
+  margin-top: 5%;
   border-radius: 0.7vw;
   background-color: #3a4863;
   border: 0.1vw solid #668cd14d;
@@ -247,14 +258,41 @@ main {
   form
   button
   svg {
-  width: 2vw;
+  width: 1.5vw;
   color: #3a4863;
+}
+
+#content
+  #main-view
+  .main-content
+  .feedback
+  .feedback-div
+  .stats
+  .numbers
+  div
+  span {
+  font-size: 0.9vw;
 }
 
 #content #main-view .main-content .feedback .feedback-div .all-comments {
   padding-left: 10%;
   margin-top: 5%;
   display: none;
+}
+
+#content #main-view .main-content .feedback .feedback-div .all-comments h2 {
+  font-size: 1.2vw;
+}
+
+#content
+  #main-view
+  .main-content
+  .feedback
+  .feedback-div
+  .all-comments
+  .comment {
+  height: 10vw;
+  overflow: auto;
 }
 
 #content #main-view .main-content .feedback .feedback-div .all-comments form {
@@ -334,4 +372,67 @@ main {
 #content #share-anything {
   width: 30%;
   padding: 0 3%;
+}
+
+#content #share-anything h3 {
+  text-transform: capitalize;
+  color: #fa520fde;
+  font-size: 1.2vw;
+  margin-bottom: 9%;
+  font-weight: 600;
+}
+
+#share-anything form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+#share-anything form .selection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1%;
+}
+
+#share-anything form select {
+  width: 45%;
+  outline: none;
+  border: 0.1vw solid #668cd14d;
+  background-color: #3a4863;
+  border-radius: 0.3vw;
+  font-size: 0.9vw;
+  padding: 3%;
+  margin-bottom: 5%;
+}
+
+#share-anything form textarea {
+  width: 100%;
+  height: 10vw;
+  outline: none;
+  border-radius: 0.5vw;
+  margin-bottom: 5%;
+  border-color: #668cd14d;
+  background-color: #3a4863;
+  font-size: 0.9vw;
+  padding: 3%;
+}
+
+#share-anything form textarea::placeholder {
+  color: #b3b0b0;
+}
+
+#share-anything form input {
+  background-color: #3a4863;
+  padding: 3% 7%;
+  border: none;
+  outline: none;
+  color: #dcdddd;
+  border: 0.1vw solid #668cd14d;
+  border-radius: 0.3vw;
+  cursor: pointer;
+  font-size: 0.9vw;
 }
