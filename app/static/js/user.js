@@ -7,59 +7,23 @@ let imageUpload = document.querySelector(".upload-image");
 
 let pitch_form = document.querySelector("#share-form");
 
-// let voteforms = document.querySelectorAll(".votesform");
-// print(voteforms);
-
-// for (let i = 0; i < voteforms.length; i++) {
-//   voteforms[i].addEventListener("submit", (e) => {
-//     e.preventDefault();
-//   });
-// }
-
 for (let i = 0; i < links.length; i++) {
   links[i].addEventListener("click", (e) => {
-    if (e.target.textContent === "my pitches") {
+    if (e.target.textContent === "questions") {
       for (let j = 0; j < links.length; j++) {
         categories[j].classList.remove("active");
       }
       for (let k = 0; k < links.length; k++) {
-        if (categories[k].id === "mypitches") {
+        if (categories[k].id === "questions") {
           categories[k].classList.add("active");
         }
       }
-    } else if (e.target.textContent === "all pitches") {
+    } else if (e.target.textContent === "feedback") {
       for (let j = 0; j < links.length; j++) {
         categories[j].classList.remove("active");
       }
       for (let k = 0; k < links.length; k++) {
-        if (categories[k].id === "allpitches") {
-          categories[k].classList.add("active");
-        }
-      }
-    } else if (e.target.textContent === "investors") {
-      for (let j = 0; j < links.length; j++) {
-        categories[j].classList.remove("active");
-      }
-      for (let k = 0; k < links.length; k++) {
-        if (categories[k].id === "investors") {
-          categories[k].classList.add("active");
-        }
-      }
-    } else if (e.target.textContent === "customers") {
-      for (let j = 0; j < links.length; j++) {
-        categories[j].classList.remove("active");
-      }
-      for (let k = 0; k < links.length; k++) {
-        if (categories[k].id === "customers") {
-          categories[k].classList.add("active");
-        }
-      }
-    } else if (e.target.textContent === "sales") {
-      for (let j = 0; j < links.length; j++) {
-        categories[j].classList.remove("active");
-      }
-      for (let k = 0; k < links.length; k++) {
-        if (categories[k].id === "sales") {
+        if (categories[k].id === "feedback") {
           categories[k].classList.add("active");
         }
       }
@@ -68,7 +32,7 @@ for (let i = 0; i < links.length; i++) {
         categories[j].classList.remove("active");
       }
       for (let k = 0; k < links.length; k++) {
-        if (categories[k].id === "employees") {
+        if (categories[k].id === "shoutouts") {
           categories[k].classList.add("active");
         }
       }
