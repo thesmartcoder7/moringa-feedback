@@ -1,77 +1,64 @@
 import unittest
-from app.models import Feedback, User, Comment, Upvote, Downvote
+from app.models import Feedback, User, Comment, Upvote, Downvote, Question, ShoutOut
 
 
 class FeedbackTest(unittest.TestCase):
-    """
-    Test Class to test the behaviour of the Article class
-    """
-
     def setUp(self):
-        """
-        Set up method that will run before every Test
-        """
         self.new_feedback = Feedback(category='popote', content='popote is taking forever')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_feedback, Feedback))
 
 
-class UserTest(unittest.TestCase):
-    """
-    Test Class to test the behaviour of the Article class
-    """
 
+class QuestionTest(unittest.TestCase):
     def setUp(self):
-        """
-        Set up method that will run before every Test
-        """
+        self.new_question = Question(category='popote', content='why is popote taking too long?')
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_question, Question))
+    
+
+
+class ShoutOutTest(unittest.TestCase):
+    def setUp(self):
+        self.new_shout_out = ShoutOut(category='maryann', content='shou out to maryann for not knowing how to give up on her students')
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_shout_out, ShoutOut))
+
+
+
+class UserTest(unittest.TestCase):
+    def setUp(self):
         self.sam = User( 'samuel@martins.com', 'samuel', 'simplepass')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.sam, User))
 
 
-class CommentTest(unittest.TestCase):
-    """
-    Test Class to test the behaviour of the Article class
-    """
 
+class CommentTest(unittest.TestCase):
     def setUp(self):
-        """
-        Set up method that will run before every Test
-        """
-        self.new_comment = Comment(user_id=10, pitch_id=10, comment="sample comment")
+        self.new_comment = Comment(user_id=10, feedback_id=10, comment="sample comment")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_comment, Comment))
 
 
-class UpVoteTest(unittest.TestCase):
-    """
-    Test Class to test the behaviour of the Article class
-    """
 
+class UpVoteTest(unittest.TestCase):
     def setUp(self):
-        """
-        Set up method that will run before every Test
-        """
-        self.up_vote = Upvote(user_id=10, pitch_id=10, upvote=5)
+        self.up_vote = Upvote(user_id=10, feedback_id=10, upvote=5)
 
     def test_instance(self):
         self.assertTrue(isinstance(self.up_vote, Upvote))
 
 
-class DownVoteTest(unittest.TestCase):
-    """
-    Test Class to test the behaviour of the Article class
-    """
 
+class DownVoteTest(unittest.TestCase):
     def setUp(self):
-        """
-        Set up method that will run before every Test
-        """
-        self.down_vote = Downvote(user_id=10, pitch_id=10, downvote=5)
+        self.down_vote = Downvote(user_id=10, feedback_id=10, downvote=5)
 
     def test_instance(self):
         self.assertTrue(isinstance(self.down_vote, Downvote))
