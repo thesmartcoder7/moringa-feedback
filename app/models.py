@@ -6,7 +6,7 @@ class Feedback(db.Model):
     category = db.Column(db.String(200), nullable=False)
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    comments = db.relationship('Comment', backref='feedback', lazy='dynamic')
+    comments = db.relationship('FeedbackComment', backref='feedback', lazy='dynamic')
     upvotes = db.relationship('Upvote', backref='feedback', lazy='dynamic')
     downvotes = db.relationship('Downvote', backref='feedback', lazy='dynamic')
 
@@ -21,7 +21,7 @@ class Question(db.Model):
     category = db.Column(db.String(200), nullable=False)
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    # comments = db.relationship('Comment', backref='question', lazy='dynamic')
+    comments = db.relationship('QuestionComment', backref='question', lazy='dynamic')
     # upvotes = db.relationship('Upvote', backref='question', lazy='dynamic')
     # downvotes = db.relationship('Downvote', backref='question', lazy='dynamic')
 
@@ -36,7 +36,7 @@ class ShoutOut(db.Model):
     category = db.Column(db.String(200), nullable=False)
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    # comments = db.relationship('Comment', backref='shoutout', lazy='dynamic')
+    comments = db.relationship('ShoutOutComment', backref='shoutout', lazy='dynamic')
     # upvotes = db.relationship('Upvote', backref='shoutout', lazy='dynamic')
     # downvotes = db.relationship('Downvote', backref='shoutout', lazy='dynamic')
 
@@ -62,14 +62,31 @@ class User(db.Model):
         return self.name
 
 
-class Comment(db.Model):
-    __tablename__ = 'comments'
+class FeedbackComment(db.Model):
+    __tablename__ = 'feedback-comments'
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     feedback_id = db.Column(db.Integer, db.ForeignKey('feedback.id'))
-    # question_id = db.column(db.Integer, db.ForeignKey('questions.id'))
-    # shoutout_id = db.column(db.Integer, db.ForeignKey('shoutouts.id'))
     comment = db.Column(db.Text, nullable=False)
+
+
+
+class QuestionComment(db.Model):
+    __tablename__ = 'question-comments'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    question_id = db.Column(db.Integer, db.ForeignKey('questions.id'))
+    comment = db.Column(db.Text, nullable=False)
+
+
+
+class ShoutOutComment(db.Model):
+    __tablename__ = 'shoutout-comments'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    shoutout_id = db.Column(db.Integer, db.ForeignKey('shoutouts.id'))
+    comment = db.Column(db.Text, nullable=False)
+
 
 
 class Upvote(db.Model):

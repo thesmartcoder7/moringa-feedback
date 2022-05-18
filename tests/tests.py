@@ -1,5 +1,5 @@
 import unittest
-from app.models import Feedback, User, Comment, Upvote, Downvote, Question, ShoutOut
+from app.models import Feedback, User, FeedbackComment, QuestionComment, ShoutOutComment, Upvote, Downvote, Question, ShoutOut
 
 
 class FeedbackTest(unittest.TestCase):
@@ -38,12 +38,30 @@ class UserTest(unittest.TestCase):
 
 
 
-class CommentTest(unittest.TestCase):
+class FeedbackCommentTest(unittest.TestCase):
     def setUp(self):
-        self.new_comment = Comment(user_id=10, feedback_id=10, comment="sample comment")
+        self.new_fcomment = FeedbackComment(user_id=10, feedback_id=10, comment="sample comment")
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_comment, Comment))
+        self.assertTrue(isinstance(self.new_fcomment, FeedbackComment))
+
+
+
+class QuestionCommentTest(unittest.TestCase):
+    def setUp(self):
+        self.new_qcomment = QuestionComment(user_id=10, question_id=10, comment="sample comment")
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_qcomment, QuestionComment))
+
+
+
+class ShoutOutCommentTest(unittest.TestCase):
+    def setUp(self):
+        self.new_scomment = ShoutOutComment(user_id=10, shoutout_id=10, comment="sample comment")
+
+    def test_instance(self):
+        self.assertTrue(isinstance(self.new_scomment, ShoutOutComment))
 
 
 
