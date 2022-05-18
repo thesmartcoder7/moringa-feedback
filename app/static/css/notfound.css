@@ -5,7 +5,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
-  color: #525252;
 }
 
 *::-webkit-scrollbar {
@@ -44,7 +43,7 @@ h1 {
   font-size: 15vw;
   font-weight: 900;
   letter-spacing: 1vw;
-  color: #ff4500;
+  color: #fa510f;
 }
 
 h2 {
@@ -57,7 +56,7 @@ h2 {
 
 a {
   color: #fff;
-  background-color: #ff4500;
+  background-color: #fa510f;
   padding: 1% 2%;
   font-size: 1vw;
   text-decoration: none;

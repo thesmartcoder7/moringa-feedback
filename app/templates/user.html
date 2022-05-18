@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static', filename='images/moringa_logo.png')}}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/user.css')}}"
+    />
+    <title>Student</title>
+  </head>
+  <body>
+    <main>
+      <section id="header">
+        <div class="logo">
+          <a href="">
+            <img
+              src="{{url_for('static', filename='images/moringa-logo.png')}}"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="navlinks">
+          <ul>
+            <li>Technical Mentors</li>
+            <li>Student Support</li>
+            <li>Canvas</li>
+          </ul>
+        </div>
+        <div class="user-image">
+          <div class="info">
+            <p>Username</p>
+            <a href="">Sign Out</a>
+          </div>
+          <div class="image">
+            <img
+              src="{{url_for('static', filename='images/headshot.jpeg')}}"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+      <section id="content"></section>
+    </main>
+  </body>
+</html>

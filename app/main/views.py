@@ -7,6 +7,11 @@ def home():
     return render_template('index.html')
 
 
+@main.route('/user')
+def dashboard():
+    return render_template('user.html')
+
+
 
 
 
