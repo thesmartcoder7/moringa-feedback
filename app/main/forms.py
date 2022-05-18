@@ -5,6 +5,7 @@ from app.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
+
 # user signup route function
 @main.route('/signup', methods=['POST', 'GET'])
 def signup():
@@ -24,6 +25,7 @@ def signup():
             return redirect(url_for('main.home'))
     else:
         return redirect(url_for('main.home'))
+
 
 
 # user login route function
