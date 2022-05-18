@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  color: #525252;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+p {
+  font-size: 1vw;
+  letter-spacing: 0.02vw;
+  line-height: 1.5vw;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  background-image: url("../images/desktop-blob.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 2%;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 1.5vw;
+  border: solid 0.1vw #ffc0a9;
+  backdrop-filter: blur(0.5vw);
+}
+
+#user-profile {
+  width: 20%;
+  height: 80%;
+  border-right: solid 0.1vw #ffc0a9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#user-profile .avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#user-profile .avatar img {
+  width: 6vw;
+  height: 6vw;
+  object-fit: scale-down;
+  border-radius: 50%;
+  border: solid 0.1vw #ff4500;
+  margin-bottom: 10%;
+}
+
+#user-profile .avatar .username {
+  text-transform: capitalize;
+}
+
+#user-profile .avatar .upload {
+  font-size: 0.8vw;
+  color: #ff4500;
+  cursor: pointer;
+}
+
+#user-profile .avatar .upload:hover {
+  color: #525252;
+}
+
+#user-profile .upload-image {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 5%;
+  animation: appear 0.5s;
+
+  display: none;
+}
+
+#user-profile .upload-image input[type="file"] {
+  font-size: 0.7vw;
+}
+
+#user-profile .upload-image input[type="submit"] {
+  margin-top: 7%;
+  padding: 5% 7%;
+  font-size: 0.8vw;
+  outline: none;
+  border: none;
+  background-color: #ff4500;
+  color: #fff;
+  border-radius: 0.3vw;
+}
+
+#user-profile .mini-nav {
+  margin-top: 10%;
+}
+
+#user-profile .mini-nav ul {
+  list-style: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#user-profile .mini-nav ul li {
+  margin: 15% 0;
+  cursor: pointer;
+}
+
+#user-profile .mini-nav ul li:hover {
+  color: #ff4500;
+}
+
+#user-profile .mini-nav .user-logout {
+  width: 100%;
+  text-align: center;
+  margin-top: 5vw;
+  cursor: pointer;
+  color: #ff4500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#user-profile .mini-nav .user-logout a {
+  color: #ff4500;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+#user-profile .mini-nav .user-logout a:hover {
+  color: #525252;
+}
+
+#main-view {
+  width: 50%;
+  height: 80%;
+  overflow: auto;
+}
+
+#main-view .main-content {
+  display: block;
+  position: relative;
+}
+
+#main-view .main-content h1 {
+  width: 50%;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 1.5vw;
+  color: #ff4500;
+  position: fixed;
+  padding: 2% 0;
+  background-color: #fff;
+  z-index: 2;
+  margin-top: -4%;
+}
+
+#main-view .main-content .pitches {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: auto;
+  position: relative;
+}
+
+@keyframes bounce {
+  0% {
+    bottom: 30%;
+  }
+  50% {
+    bottom: 35%;
+  }
+  100% {
+    bottom: 30%;
+  }
+}
+
+/* #pitches .arrow {
+  position: fixed;
+  right: 50%;
+  margin-right: -5%;
+  bottom: 30%;
+  animation: bounce 1s infinite;
+}
+
+#pitches .arrow svg {
+  color: #ff4500;
+  width: 2vw;
+} */
+
+/* #pitches h2 {
+  font-size: 1.5vw;
+  width: 60%;
+} */
+
+/* #pitches h2 span {
+  color: #ff4500;
+} */
+
+#main-view .main-content .pitches .pitch-div {
+  width: 70%;
+  margin-top: 5%;
+}
+
+#main-view .main-content .pitches .pitch-div .stats {
+  margin-top: 3%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#main-view .main-content .pitches .pitch-div .stats .likes,
+#main-view .main-content .pitches .pitch-div .stats .dislikes {
+  margin-right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#main-view .main-content .pitches .pitch-div .stats .likes button,
+#main-view .main-content .pitches .pitch-div .stats .dislikes button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+#main-view .main-content .pitches .pitch-div .stats .likes svg,
+#main-view .main-content .pitches .pitch-div .stats .dislikes svg {
+  color: #e77d56;
+  width: 2vw;
+  cursor: pointer;
+}
+
+#main-view .main-content .pitches .pitch-div .stats .likes span,
+#main-view .main-content .pitches .pitch-div .stats .dislikes span {
+  margin-left: 10%;
+  font-size: 0.8vw;
+  letter-spacing: 0.05vw;
+}
+
+#main-view .main-content .pitches .pitch-div .stats .show-comments {
+  text-transform: capitalize;
+  color: #ff4500;
+  cursor: pointer;
+}
+
+#main-view .main-content .pitches .pitch-div .stats .show-comments:hover {
+  color: #525252;
+}
+
+#main-view .main-content .pitches .pitch-div .all-comments {
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 5%;
+  /* border-left: solid 0.1vw #ffc0a9;
+  padding-left: 3%;
+  margin-bottom: 5%; */
+  animation: appear 0.5s;
+  display: none;
+}
+
+#main-view .main-content .pitches .pitch-div .all-comments h2 {
+  text-transform: capitalize;
+  font-size: 1vw;
+}
+
+#main-view .main-content .pitches .pitch-div .all-comments form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 5%;
+  width: 100%;
+}
+
+#main-view .main-content .pitches .pitch-div .all-comments form textarea {
+  width: 90%;
+  height: 5vw;
+  padding: 2%;
+  font-size: 0.9vw;
+  border-radius: 0.5vw;
+  outline: none;
+}
+
+#main-view .main-content .pitches .pitch-div .all-comments form input {
+  background-color: #ff4500;
+  color: #fff;
+  padding: 2% 5%;
+  font-size: 0.9vw;
+  outline: none;
+  border: none;
+  border-radius: 0.5vw;
+  margin-top: 2%;
+  cursor: pointer;
+}
+
+#main-view .main-content .pitches .pitch-div .all-comments .feedback {
+  height: 10vw;
+  overflow: auto;
+}
+
+#main-view
+  .main-content
+  .pitches
+  .pitch-div
+  .all-comments
+  .feedback
+  .comment-box {
+  border-left: solid 0.1vw #ffc0a9;
+  padding-left: 3%;
+  margin: 7% 0;
+}
+
+#main-view
+  .main-content
+  .pitches
+  .pitch-div
+  .all-comments
+  .feedback
+  .comment-box
+  span {
+  color: #ff4500;
+}
+
+#main-view .main-content .pitches .pitch-div hr {
+  margin-top: 5%;
+  width: 98%;
+  height: 0.05vw;
+  border: none;
+  outline: none;
+  background-color: #e9e9e9;
+}
+
+#mypitches,
+#allpitches,
+#investors,
+#customers,
+#sales,
+#employees {
+  display: none;
+}
+
+#main-view .main-content {
+  display: none;
+}
+
+#main-view .active {
+  display: block;
+  animation: appear 1s;
+}
+
+#share-pitch {
+  width: 30%;
+  height: 80%;
+  border-left: solid 0.1vw #ffc0a9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 3%;
+}
+
+#share-pitch h3 {
+  font-size: 1.3vw;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  color: #ff4500;
+}
+
+#share-pitch form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+#share-pitch form select {
+  outline: none;
+  border-color: #e77d56;
+  background-color: transparent;
+  border-radius: 0.5vw;
+  font-size: 0.9vw;
+  padding: 2%;
+  margin-bottom: 5%;
+}
+
+#share-pitch form textarea {
+  width: 80%;
+  height: 10vw;
+  outline: none;
+  border-radius: 0.5vw;
+  margin-bottom: 5%;
+  border-color: #ff9e7b;
+  font-size: 0.9vw;
+  padding: 2%;
+}
+
+#share-pitch form textarea::placeholder {
+  color: #b3b0b0;
+}
+
+#share-pitch form input {
+  background-color: #ff4500;
+  padding: 2% 7%;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  font-size: 0.9vw;
+}

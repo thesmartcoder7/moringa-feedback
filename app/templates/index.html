@@ -4,9 +4,111 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static', filename='images/moringa_logo.png')}}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/index.css')}}"
+    />
     <title>Home</title>
   </head>
   <body>
-    <h1>This is the main app route</h1>
+    <main>
+      <section id="greeting">
+        <h1>Moringa Feedback</h1>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          role="img"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="none"
+            stroke="#fa510f"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+            d="M8 8h8m-8 3h8m-8 3h3m11-3c0 4.418-4.477 8-10 8c-1.3 0-2.54-.198-3.68-.559C6.528 20.021 5 21 2 21c1-1 2.27-2.35 2.801-4.447C3.067 15.114 2 13.157 2 11c0-4.418 4.477-8 10-8s10 3.582 10 8z"
+          />
+        </svg>
+      </section>
+      <section id="login">
+        <!-- login form -->
+        <form action="" id="login-form">
+          <label for="l-email">
+            <span>Email</span>
+            <input
+              type="email"
+              id="l-email"
+              name="l-email"
+              placeholder="example@yourdomain.com"
+              aria-required="true"
+              required
+            />
+          </label>
+          <label for="l-password">
+            <span>Password</span>
+            <input
+              type="password"
+              id="l-password"
+              name="l-password"
+              placeholder="your password"
+              aria-required="true"
+              required
+            />
+          </label>
+
+          <input type="submit" value="login" class="submit" />
+          <p>
+            Don't have an account yet? &nbsp;<span id="signup-toggle">
+              Sign Up</span
+            >
+          </p>
+        </form>
+
+        <!-- signup form -->
+        <form action="" id="signup-form">
+          <label for="s-name">
+            <span>Full Name</span>
+            <input
+              type="text"
+              id="s-name"
+              name="s-name"
+              placeholder="John Doe"
+              aria-required="true"
+              required
+            />
+          </label>
+          <label for="s-email">
+            <span>Email</span>
+            <input
+              type="email"
+              id="s-email"
+              name="s-email"
+              placeholder="example@yourdomain.com"
+              aria-required="true"
+              required
+            />
+          </label>
+          <label for="s-password">
+            <span>Password</span>
+            <input
+              type="password"
+              id="s-password"
+              name="s-password"
+              placeholder="your password"
+              aria-required="true"
+              required
+            />
+          </label>
+          <input type="submit" value="Sign Up" class="submit" />
+          <p>Already a member? &nbsp;<span id="login-toggle"> Sign In</span></p>
+        </form>
+      </section>
+    </main>
+    <script src="{{url_for('static', filename='js/index.js')}}"></script>
   </body>
 </html>
