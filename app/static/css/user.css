@@ -169,8 +169,7 @@ main {
 }
 
 #content #main-view .main-content h1 {
-  /* color: #fa510f; */
-  color: #fa520fd0;
+  color: #fa520fde;
   font-size: 1.5vw;
   text-transform: capitalize;
   margin-bottom: 3%;
