@@ -5,7 +5,7 @@ let commentToggle = document.querySelectorAll(".show-comments");
 let upload = document.querySelector(".upload");
 let imageUpload = document.querySelector(".upload-image");
 
-let pitch_form = document.querySelector("#pitch-form");
+let pitch_form = document.querySelector("#share-form");
 
 // let voteforms = document.querySelectorAll(".votesform");
 // print(voteforms);
@@ -78,6 +78,7 @@ for (let i = 0; i < links.length; i++) {
 
 for (let i = 0; i < commentToggle.length; i++) {
   commentToggle[i].addEventListener("click", (e) => {
+    console.log(e);
     if (
       e.target.parentElement.parentElement.lastElementChild.style.display !=
       "block"
