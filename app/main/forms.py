@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for, session, request
+from flask import redirect, url_for, session, request, flash
 from app import db
 from . import main
 from app.models import Feedback, FeedbackComment, Question, QuestionComment, ShoutOut, ShoutOutComment, User
@@ -34,6 +34,7 @@ def signup():
                 return redirect(url_for('main.staff_dashboard', username=new_user.name), code=307)
             else:
                 # return a flash message for a wrong email used
+                flash("Please Signup using a valid Moringa School email!", "warning")
                 return redirect(url_for('main.home'))
         else:
             # return a flash message for an unsuccessful signup
@@ -63,13 +64,17 @@ def login():
                 elif result[1] == "moringaschool.com":
                     return redirect(url_for('main.staff_dashboard', username=user.name), code=307)
                 else:
+                    flash("Please use a valid Moringa School email!", "warning")
                     return redirect(url_for('main.home'))
             else:
                 # include a flash message here to indicate wrong password
+                flash("Please have entered the wrong password!", "warning")
                 return redirect(url_for('main.home'))
         else:
+            flash("User doesn't seem to exist. Make sure to check your spelling!", "warning")
             return redirect(url_for('main.home'))
     else:
+        flash("You are not permitted to access this route using that method!", "warning")
         return redirect(url_for('main.home'))
 
 

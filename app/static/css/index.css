@@ -80,6 +80,18 @@ main {
   }
 }
 
+@keyframes vanish {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
 #login form {
   width: 60%;
   display: flex;
@@ -88,6 +100,11 @@ main {
   justify-content: flex-start;
   padding: 0 5%;
   animation: appear 1s;
+}
+
+#flash {
+  margin-top: -5%;
+  color: #fa510f;
 }
 
 #login form input:focus,

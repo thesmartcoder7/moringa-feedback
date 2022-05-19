@@ -5,7 +5,7 @@ from app.models import Feedback, FeedbackComment, Question, QuestionComment, Sho
 
 @main.route('/')
 def home():
-    if session:
+    if 'username' in session:
         return redirect(url_for('main.dashboard', username=session['username']))
     else:
         return render_template('index.html')

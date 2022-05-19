@@ -37,6 +37,18 @@
       </section>
       <section id="login">
         <!-- login form -->
+        {% with messages = get_flashed_messages() %}
+        <!--  -->
+        {% if messages %}
+        <!--  -->
+        {% for message in messages %}
+        <p id="flash">{{message}}</p>
+        <br /><br />
+        {% endfor %}
+        <!--  -->
+        {% endif %}
+        <!--  -->
+        {% endwith %}
         <form action="{{url_for('main.login')}}" id="login-form" method="post">
           <label for="l-email">
             <span>Email</span>
