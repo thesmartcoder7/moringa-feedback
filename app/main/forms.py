@@ -3,7 +3,7 @@ from app import db
 from . import main
 from app.models import Feedback, FeedbackComment, Question, QuestionComment, ShoutOut, ShoutOutComment, User
 from werkzeug.security import generate_password_hash, check_password_hash
-
+import re
 
 
 # user signup route function
@@ -14,13 +14,27 @@ def signup():
         name = request.form['s-name']
         password = request.form['s-password']
         if email and name and password:
-            new_user = User(name, email, generate_password_hash(password))
-            db.session.add(new_user)
-            db.session.commit()
-            session['username'] = name
-            session['email'] = email
-            session['password'] = password
-            return redirect(url_for('main.dashboard', user=new_user), code=307)
+            regex = "@([a-z\S]+)"
+            result = re.split(regex, email)
+            if result[1] == "student.moringaschool.com":
+                new_user = User(name, email, generate_password_hash(password))
+                db.session.add(new_user)
+                db.session.commit()
+                session['username'] = name
+                session['email'] = email
+                session['password'] = password
+                return redirect(url_for('main.dashboard', username=new_user.name), code=307)
+            elif result[1] == "moringaschool.com":
+                new_user = User(name, email, generate_password_hash(password))
+                db.session.add(new_user)
+                db.session.commit()
+                session['username'] = name
+                session['email'] = email
+                session['password'] = password
+                return redirect(url_for('main.staff_dashboard', username=new_user.name), code=307)
+            else:
+                # return a flash message for a wrong email used
+                return redirect(url_for('main.home'))
         else:
             # return a flash message for an unsuccessful signup
             return redirect(url_for('main.home'))
@@ -36,12 +50,20 @@ def login():
         email = request.form['l-email']
         password = request.form['l-password']
         user = User.query.filter_by(email=email).first()
+
         if user:
             if check_password_hash(user.password, password):
                 session['username'] = user.name
                 session['email'] = email
                 session['password'] = user.password
-                return redirect(url_for('main.dashboard', username=user.name), code=307)
+                regex = "@([a-z\S]+)"
+                result = re.split(regex, email)
+                if result[1] == "student.moringaschool.com":
+                    return redirect(url_for('main.dashboard', username=user.name), code=307)
+                elif result[1] == "moringaschool.com":
+                    return redirect(url_for('main.staff_dashboard', username=user.name), code=307)
+                else:
+                    return redirect(url_for('main.home'))
             else:
                 # include a flash message here to indicate wrong password
                 return redirect(url_for('main.home'))

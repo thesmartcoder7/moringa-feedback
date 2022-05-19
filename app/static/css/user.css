@@ -124,7 +124,7 @@ main {
 }
 
 #header .user-image .image img {
-  width: 4vw;
+  width: 3vw;
   border: solid 0.2vw #fa510f;
   border-radius: 50%;
 }
