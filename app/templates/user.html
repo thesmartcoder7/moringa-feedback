@@ -64,13 +64,15 @@
             <h1>questions</h1>
             <!-- all the feedback -->
             <div class="feedback">
+              {% if questions == 'empty' %}
               <div class="feedback-div">
                 <p class="single-feedback">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cupiditate odit, alias dolores odio, accusamus aspernatur
-                  natus necessitatibus nisi eos atque cum aliquid soluta itaque
-                  rem tempore eum, tempora voluptates impedit.
+                  There are no inputs on this categoy yet.
                 </p>
+              </div>
+              {% else %} {% for question in questions %}
+              <div class="feedback-div">
+                <p class="single-feedback">{{question.content}}</p>
                 <div class="stats">
                   <div class="numbers">
                     <div class="likes">
@@ -119,16 +121,29 @@
                   </form>
                   <h2>Comments:</h2>
                   <div class="comment">
+                    {% if q_comments == 'empty' %}
                     <div class="comment-box">
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Consequatur velit nisi asperiores illum sapiente
-                        itaque.
-                      </p>
-                      <p>By: <span>username</span></p>
+                      <p>There are no comments on this yet</p>
+                    </div>
+                    {% else %} {% for comment in q_comments %}
+                    <div class="comment-box">
+                      <p>{{comment.comment}}</p>
+                      {% for user in users %} {% if user.id == comment.user_id
+                      %}
+                      <p>By: <span>{{user.name}}</span></p>
+                      {% endif %}
+                      <!--  -->
+                      {% endfor %}
+                      <!--  -->
+                      {% endfor %}
+                      <!--  -->
+                      {% endif %}
                     </div>
                   </div>
                 </div>
+                {% endfor %}
+                <!--  -->
+                {% endif %}
               </div>
             </div>
           </div>
@@ -138,13 +153,15 @@
             <h1>feedback</h1>
             <!-- all the feedback -->
             <div class="feedback">
+              {% if feedback == 'empty' %}
               <div class="feedback-div">
                 <p class="single-feedback">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cupiditate odit, alias dolores odio, accusamus aspernatur
-                  natus necessitatibus nisi eos atque cum aliquid soluta itaque
-                  rem tempore eum, tempora voluptates impedit.
+                  There are no inputs on this categoy yet.
                 </p>
+              </div>
+              {% else %} {% for feedback in feedback %}
+              <div class="feedback-div">
+                <p class="single-feedback">{{feedback.content}}</p>
                 <div class="stats">
                   <div class="numbers">
                     <div class="likes">
@@ -193,16 +210,29 @@
                   </form>
                   <h2>Comments:</h2>
                   <div class="comment">
+                    {% if f_comments == 'empty' %}
                     <div class="comment-box">
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Consequatur velit nisi asperiores illum sapiente
-                        itaque.
-                      </p>
-                      <p>By: <span>username</span></p>
+                      <p>There are no comments on this yet</p>
+                    </div>
+                    {% else %} {% for comment in f_comments %}
+                    <div class="comment-box">
+                      <p>{{comment.comment}}</p>
+                      {% for user in users %} {% if user.id == comment.user_id
+                      %}
+                      <p>By: <span>{{user.name}}</span></p>
+                      {% endif %}
+                      <!--  -->
+                      {% endfor %}
+                      <!--  -->
+                      {% endfor %}
+                      <!--  -->
+                      {% endif %}
                     </div>
                   </div>
                 </div>
+                {% endfor %}
+                <!--  -->
+                {% endif %}
               </div>
             </div>
           </div>
@@ -212,13 +242,15 @@
             <h1>shout outs</h1>
             <!-- all the feedback -->
             <div class="feedback">
+              {% if shoutouts == 'empty' %}
               <div class="feedback-div">
                 <p class="single-feedback">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cupiditate odit, alias dolores odio, accusamus aspernatur
-                  natus necessitatibus nisi eos atque cum aliquid soluta itaque
-                  rem tempore eum, tempora voluptates impedit.
+                  There are no inputs on this categoy yet.
                 </p>
+              </div>
+              {% else %} {% for shoutout in shoutouts %}
+              <div class="feedback-div">
+                <p class="single-feedback">{{shoutout.content}}</p>
                 <div class="stats">
                   <div class="numbers">
                     <div class="likes">
@@ -267,16 +299,29 @@
                   </form>
                   <h2>Comments:</h2>
                   <div class="comment">
+                    {% if s_comments == 'empty' %}
                     <div class="comment-box">
-                      <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Consequatur velit nisi asperiores illum sapiente
-                        itaque.
-                      </p>
-                      <p>By: <span>username</span></p>
+                      <p>There are no comments on this yet</p>
+                    </div>
+                    {% else %} {% for comment in s_comments %}
+                    <div class="comment-box">
+                      <p>{{comment.comment}}</p>
+                      {% for user in users %} {% if user.id == comment.user_id
+                      %}
+                      <p>By: <span>{{user.name}}</span></p>
+                      {% endif %}
+                      <!--  -->
+                      {% endfor %}
+                      <!--  -->
+                      {% endfor %}
+                      <!--  -->
+                      {% endif %}
                     </div>
                   </div>
                 </div>
+                {% endfor %}
+                <!--  -->
+                {% endif %}
               </div>
             </div>
           </div>

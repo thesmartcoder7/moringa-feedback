@@ -78,3 +78,18 @@ def share():
             return redirect(url_for('main.home'))
     else:
         return redirect(url_for('main.home'))
+
+
+
+# commenting functionality
+@main.route('/comment/<thought_id>', methods=['POST', 'GET'])
+def comment(thought_id):
+    if request.method == 'POST':
+        # user = User.query.filter_by(name=session.get('user')).first()
+        # new_comment = Comment(comment = request.form['comment'], user_id=user.id, pitch_id=pitch_id)
+        # db.session.add(new_comment)
+        # db.session.commit()
+        return redirect(url_for('user', username = session['user']), code=307)
+    else:
+        return redirect(url_for('user', username = session['user']), code=307)
+
