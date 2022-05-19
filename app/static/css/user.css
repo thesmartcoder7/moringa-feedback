@@ -85,7 +85,11 @@ main {
   letter-spacing: 0.05vw;
 }
 
-#header .navlinks ul li:hover {
+#header .navlinks ul li a {
+  text-decoration: none;
+}
+
+#header .navlinks ul li a:hover {
   color: #fa510f;
 }
 
