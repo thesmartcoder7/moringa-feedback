@@ -70,7 +70,9 @@
                   There are no inputs on this categoy yet.
                 </p>
               </div>
-              {% else %} {% for question in questions %}
+              {% else %}
+              <!--  -->
+              {% for question in questions %}
               <div class="feedback-div">
                 <p class="single-feedback">{{question.content}}</p>
                 <div class="stats">
@@ -115,7 +117,11 @@
                   <p class="show-comments">show comments</p>
                 </div>
                 <div class="all-comments">
-                  <form action="" id="comment-form">
+                  <form
+                    action="{{url_for('main.question_comment', question_id=question.id)}}"
+                    id="comment-form"
+                    method="post"
+                  >
                     <textarea name="comment" id="comment"></textarea>
                     <input type="submit" value="leave comment" />
                   </form>
@@ -125,26 +131,32 @@
                     <div class="comment-box">
                       <p>There are no comments on this yet</p>
                     </div>
-                    {% else %} {% for comment in q_comments %}
+                    {% else %}
+                    <!--  -->
+                    {% for comment in q_comments %}
+                    <!--  -->
+                    {% if comment.question_id == question.id%}
                     <div class="comment-box">
                       <p>{{comment.comment}}</p>
-                      {% for user in users %} {% if user.id == comment.user_id
-                      %}
+                      {% for user in users %}
+                      <!--  -->
+                      {% if user.id == comment.question_user_id %}
                       <p>By: <span>{{user.name}}</span></p>
                       {% endif %}
-                      <!--  -->
+                      <!-- -->
                       {% endfor %}
-                      <!--  -->
-                      {% endfor %}
-                      <!--  -->
-                      {% endif %}
                     </div>
+                    {% endif %}
+                    <!--  -->
+                    {% endfor %}
+                    <!--  -->
+                    {% endif %}
                   </div>
                 </div>
-                {% endfor %}
-                <!--  -->
-                {% endif %}
               </div>
+              {% endfor %}
+              <!--  -->
+              {% endif %}
             </div>
           </div>
 
@@ -159,7 +171,9 @@
                   There are no inputs on this categoy yet.
                 </p>
               </div>
-              {% else %} {% for feedback in feedback %}
+              {% else %}
+              <!--  -->
+              {% for feedback in feedback %}
               <div class="feedback-div">
                 <p class="single-feedback">{{feedback.content}}</p>
                 <div class="stats">
@@ -204,7 +218,11 @@
                   <p class="show-comments">show comments</p>
                 </div>
                 <div class="all-comments">
-                  <form action="" id="comment-form">
+                  <form
+                    action="{{url_for('main.feedback_comment', feedback_id=feedback.id)}}"
+                    id="comment-form"
+                    method="post"
+                  >
                     <textarea name="comment" id="comment"></textarea>
                     <input type="submit" value="leave comment" />
                   </form>
@@ -214,26 +232,32 @@
                     <div class="comment-box">
                       <p>There are no comments on this yet</p>
                     </div>
-                    {% else %} {% for comment in f_comments %}
+                    {% else %}
+                    <!--  -->
+                    {% for comment in f_comments %}
+                    <!--  -->
+                    {% if comment.feedback_id == feedback.id%}
                     <div class="comment-box">
                       <p>{{comment.comment}}</p>
-                      {% for user in users %} {% if user.id == comment.user_id
-                      %}
+                      {% for user in users %}
+                      <!--  -->
+                      {% if user.id == comment.feedback_user_id %}
                       <p>By: <span>{{user.name}}</span></p>
                       {% endif %}
-                      <!--  -->
+                      <!-- -->
                       {% endfor %}
-                      <!--  -->
-                      {% endfor %}
-                      <!--  -->
-                      {% endif %}
                     </div>
+                    {% endif %}
+                    <!--  -->
+                    {% endfor %}
+                    <!--  -->
+                    {% endif %}
                   </div>
                 </div>
-                {% endfor %}
-                <!--  -->
-                {% endif %}
               </div>
+              {% endfor %}
+              <!--  -->
+              {% endif %}
             </div>
           </div>
 
@@ -248,7 +272,9 @@
                   There are no inputs on this categoy yet.
                 </p>
               </div>
-              {% else %} {% for shoutout in shoutouts %}
+              {% else %}
+              <!--  -->
+              {% for shoutout in shoutouts%}
               <div class="feedback-div">
                 <p class="single-feedback">{{shoutout.content}}</p>
                 <div class="stats">
@@ -293,7 +319,11 @@
                   <p class="show-comments">show comments</p>
                 </div>
                 <div class="all-comments">
-                  <form action="" id="comment-form">
+                  <form
+                    action="{{url_for('main.shoutout_comment', shoutout_id=shoutout.id)}}"
+                    id="comment-form"
+                    method="post"
+                  >
                     <textarea name="comment" id="comment"></textarea>
                     <input type="submit" value="leave comment" />
                   </form>
@@ -303,26 +333,32 @@
                     <div class="comment-box">
                       <p>There are no comments on this yet</p>
                     </div>
-                    {% else %} {% for comment in s_comments %}
+                    {% else %}
+                    <!--  -->
+                    {% for comment in s_comments %}
+                    <!--  -->
+                    {% if comment.shoutout_id == shoutout.id%}
                     <div class="comment-box">
                       <p>{{comment.comment}}</p>
-                      {% for user in users %} {% if user.id == comment.user_id
-                      %}
+                      {% for user in users %}
+                      <!--  -->
+                      {% if user.id == comment.user_id %}
                       <p>By: <span>{{user.name}}</span></p>
                       {% endif %}
-                      <!--  -->
+                      <!-- -->
                       {% endfor %}
-                      <!--  -->
-                      {% endfor %}
-                      <!--  -->
-                      {% endif %}
                     </div>
+                    {% endif %}
+                    <!--  -->
+                    {% endfor %}
+                    <!--  -->
+                    {% endif %}
                   </div>
                 </div>
-                {% endfor %}
-                <!--  -->
-                {% endif %}
               </div>
+              {% endfor %}
+              <!--  -->
+              {% endif %}
             </div>
           </div>
         </section>

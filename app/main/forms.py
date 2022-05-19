@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, session, request
 from app import db
 from . import main
-from app.models import Feedback, Question, ShoutOut, User
+from app.models import Feedback, FeedbackComment, Question, QuestionComment, ShoutOut, ShoutOutComment, User
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
@@ -82,14 +82,49 @@ def share():
 
 
 # commenting functionality
-@main.route('/comment/<thought_id>', methods=['POST', 'GET'])
-def comment(thought_id):
+@main.route('/feedback-comment/<feedback_id>', methods=['POST', 'GET'])
+def feedback_comment(feedback_id):
     if request.method == 'POST':
-        # user = User.query.filter_by(name=session.get('user')).first()
-        # new_comment = Comment(comment = request.form['comment'], user_id=user.id, pitch_id=pitch_id)
-        # db.session.add(new_comment)
-        # db.session.commit()
-        return redirect(url_for('user', username = session['user']), code=307)
+        user = User.query.filter_by(email=session.get('email')).first()
+        if request.form['comment']:
+            new_comment = FeedbackComment(comment = request.form['comment'], feedback_user_id=user.id, feedback_id=feedback_id)
+            db.session.add(new_comment)
+            db.session.commit()
+            return redirect(url_for('main.dashboard', username = user.name), code=307)
+        else:
+            return redirect(url_for('main.dashboard', username = user.name), code=307)
     else:
-        return redirect(url_for('user', username = session['user']), code=307)
+        return redirect(url_for('main.dashboard', username = user.name), code=307)
+
+
+# commenting functionality
+@main.route('/question-comment/<question_id>', methods=['POST', 'GET'])
+def question_comment(question_id):
+    if request.method == 'POST':
+        user = User.query.filter_by(email=session.get('email')).first()
+        if request.form['comment']:
+            new_comment = QuestionComment(comment = request.form['comment'], question_user_id=user.id, question_id=question_id)
+            db.session.add(new_comment)
+            db.session.commit()
+            return redirect(url_for('main.dashboard', username = user.name), code=307)
+        else:
+            return redirect(url_for('main.dashboard', username = user.name), code=307)
+    else:
+        return redirect(url_for('main.dashboard', username = user.name), code=307)
+
+
+# commenting functionality
+@main.route('/shoutout-comment/<shoutout_id>', methods=['POST', 'GET'])
+def shoutout_comment(shoutout_id):
+    if request.method == 'POST':
+        user = User.query.filter_by(email=session.get('email')).first()
+        if request.form['comment']:
+            new_comment = ShoutOutComment(comment = request.form['comment'], shoutout_user_id=user.id, shoutout_id=shoutout_id)
+            db.session.add(new_comment)
+            db.session.commit()
+            return redirect(url_for('main.dashboard', username = user.name), code=307)
+        else:
+            return redirect(url_for('main.dashboard', username = user.name), code=307)
+    else:
+        return redirect(url_for('main.dashboard', username = user.name), code=307)
 

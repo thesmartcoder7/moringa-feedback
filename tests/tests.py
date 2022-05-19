@@ -40,7 +40,7 @@ class UserTest(unittest.TestCase):
 
 class FeedbackCommentTest(unittest.TestCase):
     def setUp(self):
-        self.new_fcomment = FeedbackComment(user_id=10, feedback_id=10, comment="sample comment")
+        self.new_fcomment = FeedbackComment(feedback_user_id=10, feedback_id=10, comment="sample comment")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_fcomment, FeedbackComment))
@@ -49,7 +49,7 @@ class FeedbackCommentTest(unittest.TestCase):
 
 class QuestionCommentTest(unittest.TestCase):
     def setUp(self):
-        self.new_qcomment = QuestionComment(user_id=10, question_id=10, comment="sample comment")
+        self.new_qcomment = QuestionComment(question_user_id=10, question_id=10, comment="sample comment")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_qcomment, QuestionComment))
@@ -58,7 +58,7 @@ class QuestionCommentTest(unittest.TestCase):
 
 class ShoutOutCommentTest(unittest.TestCase):
     def setUp(self):
-        self.new_scomment = ShoutOutComment(user_id=10, shoutout_id=10, comment="sample comment")
+        self.new_scomment = ShoutOutComment(shoutout_user_id=10, shoutout_id=10, comment="sample comment")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_scomment, ShoutOutComment))

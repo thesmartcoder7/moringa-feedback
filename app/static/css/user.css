@@ -365,6 +365,17 @@ main {
   .feedback-div
   .all-comments
   .comment
+  .comment-box {
+  margin-top: 5%;
+}
+
+#content
+  #main-view
+  .main-content
+  .feedback
+  .feedback-div
+  .all-comments
+  .comment
   .comment-box
   p {
   margin-bottom: 2%;

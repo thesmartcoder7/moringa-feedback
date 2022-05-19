@@ -67,27 +67,27 @@ class User(db.Model):
 
 
 class FeedbackComment(db.Model):
-    __tablename__ = 'feedback-comments'
+    __tablename__ = 'feedbackcomments'
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    feedback_user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     feedback_id = db.Column(db.Integer, db.ForeignKey('feedback.id'))
     comment = db.Column(db.Text, nullable=False)
 
 
 
 class QuestionComment(db.Model):
-    __tablename__ = 'question-comments'
+    __tablename__ = 'questioncomments'
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    question_user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     question_id = db.Column(db.Integer, db.ForeignKey('questions.id'))
     comment = db.Column(db.Text, nullable=False)
 
 
 
 class ShoutOutComment(db.Model):
-    __tablename__ = 'shoutout-comments'
+    __tablename__ = 'shoutoutcomments'
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    shoutout_user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     shoutout_id = db.Column(db.Integer, db.ForeignKey('shoutouts.id'))
     comment = db.Column(db.Text, nullable=False)
 
