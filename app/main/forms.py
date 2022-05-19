@@ -13,32 +13,37 @@ def signup():
         email = request.form['s-email']
         name = request.form['s-name']
         password = request.form['s-password']
-        if email and name and password:
-            regex = "@([a-z\S]+)"
-            result = re.split(regex, email)
-            if result[1] == "student.moringaschool.com":
-                new_user = User(name, email, generate_password_hash(password))
-                db.session.add(new_user)
-                db.session.commit()
-                session['username'] = name
-                session['email'] = email
-                session['password'] = password
-                return redirect(url_for('main.dashboard', username=new_user.name), code=307)
-            elif result[1] == "moringaschool.com":
-                new_user = User(name, email, generate_password_hash(password))
-                db.session.add(new_user)
-                db.session.commit()
-                session['username'] = name
-                session['email'] = email
-                session['password'] = password
-                return redirect(url_for('main.staff_dashboard', username=new_user.name), code=307)
-            else:
-                # return a flash message for a wrong email used
-                flash("Please Signup using a valid Moringa School email!", "warning")
-                return redirect(url_for('main.home'))
-        else:
-            # return a flash message for an unsuccessful signup
+        check = User.query.filter_by(email=email).first()
+        if check:
+            flash("This user already exists, login to your accout!", "warning")
             return redirect(url_for('main.home'))
+        else:
+            if email and name and password:
+                regex = "@([a-z\S]+)"
+                result = re.split(regex, email)
+                if result[1] == "student.moringaschool.com":
+                    new_user = User(name, email, generate_password_hash(password))
+                    db.session.add(new_user)
+                    db.session.commit()
+                    session['username'] = name
+                    session['email'] = email
+                    session['password'] = password
+                    return redirect(url_for('main.dashboard', username=new_user.name), code=307)
+                elif result[1] == "moringaschool.com":
+                    new_user = User(name, email, generate_password_hash(password))
+                    db.session.add(new_user)
+                    db.session.commit()
+                    session['username'] = name
+                    session['email'] = email
+                    session['password'] = password
+                    return redirect(url_for('main.staff_dashboard', username=new_user.name), code=307)
+                else:
+                    # return a flash message for a wrong email used
+                    flash("Please Signup using a valid Moringa School email!", "warning")
+                    return redirect(url_for('main.home'))
+            else:
+                # return a flash message for an unsuccessful signup
+                return redirect(url_for('main.home'))
     else:
         return redirect(url_for('main.home'))
 
