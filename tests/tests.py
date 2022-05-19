@@ -4,7 +4,7 @@ from app.models import Feedback, User, FeedbackComment, QuestionComment, ShoutOu
 
 class FeedbackTest(unittest.TestCase):
     def setUp(self):
-        self.new_feedback = Feedback(category='popote', content='popote is taking forever')
+        self.new_feedback = Feedback(category='popote', content='popote is taking forever', topic='popote')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_feedback, Feedback))
@@ -13,7 +13,7 @@ class FeedbackTest(unittest.TestCase):
 
 class QuestionTest(unittest.TestCase):
     def setUp(self):
-        self.new_question = Question(category='popote', content='why is popote taking too long?')
+        self.new_question = Question(category='popote', content='why is popote taking too long?', topic='popote')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_question, Question))
@@ -22,7 +22,7 @@ class QuestionTest(unittest.TestCase):
 
 class ShoutOutTest(unittest.TestCase):
     def setUp(self):
-        self.new_shout_out = ShoutOut(category='maryann', content='shou out to maryann for not knowing how to give up on her students')
+        self.new_shout_out = ShoutOut(category='maryann', content='shou out to maryann for not knowing how to give up on her students', topic='technical mentor')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_shout_out, ShoutOut))

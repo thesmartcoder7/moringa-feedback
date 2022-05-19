@@ -14,7 +14,10 @@ def home():
 @main.route('/user/<username>', methods=['POST', 'GET'])
 def dashboard(username):
     user = User.query.filter_by(name=username).first()
-    return render_template('user.html', user=user)
+    if user:
+        return render_template('user.html', user=user)
+    else:
+        return redirect(url_for('main.home'))
     
 
 @main.route('/logout')

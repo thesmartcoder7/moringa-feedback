@@ -285,7 +285,11 @@
         <!-- share form section -->
         <section id="share-anything">
           <h3>Share Anything</h3>
-          <form action="" id="share-form">
+          <form
+            action="{{url_for('main.share')}}"
+            id="share-form"
+            method="post"
+          >
             <div class="selection">
               <select id="category" name="category">
                 <option value="" selected>Select Category</option>

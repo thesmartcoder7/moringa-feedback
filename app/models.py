@@ -4,6 +4,7 @@ class Feedback(db.Model):
     __tablename__ = 'feedback'
     id = db.Column(db.Integer, primary_key=True)
     category = db.Column(db.String(200), nullable=False)
+    topic = db.Column(db.String(200))
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     comments = db.relationship('FeedbackComment', backref='feedback', lazy='dynamic')
@@ -19,6 +20,7 @@ class Question(db.Model):
     __tablename__ = 'questions'
     id = db.Column(db.Integer, primary_key=True)
     category = db.Column(db.String(200), nullable=False)
+    topic = db.Column(db.String(200))
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     comments = db.relationship('QuestionComment', backref='question', lazy='dynamic')
@@ -34,6 +36,7 @@ class ShoutOut(db.Model):
     __tablename__ = 'shoutouts'
     id = db.Column(db.Integer, primary_key=True)
     category = db.Column(db.String(200), nullable=False)
+    topic = db.Column(db.String(200))
     content = db.Column(db.Text, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     comments = db.relationship('ShoutOutComment', backref='shoutout', lazy='dynamic')
@@ -60,6 +63,7 @@ class User(db.Model):
 
     def __str__(self) -> str:
         return self.name
+
 
 
 class FeedbackComment(db.Model):
