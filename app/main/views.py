@@ -25,10 +25,18 @@ def dashboard(username):
 
     if not len(questions)!= 0:
         questions = 'empty'
+    else:
+        questions.reverse()
+
     if not len(feedback)!= 0:
         feedback = 'empty'
+    else:
+        feedback.reverse()
+
     if not len(shoutouts) != 0:
         shoutouts = 'empty'
+    else:
+        shoutouts.reverse()
 
     if not len(feedback_comments) != 0:
         feedback_comments = 'empty'
