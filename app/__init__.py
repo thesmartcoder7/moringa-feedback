@@ -22,4 +22,6 @@ def create_app():
     app.register_blueprint(main)
 
     return app
+
+app = create_app()
     
