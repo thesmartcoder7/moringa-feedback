@@ -9,6 +9,7 @@ python-dotenv = "*"
 flask-migrate = "*"
 psycopg2 = "*"
 gunicorn = "*"
+binary = "*"
 
 [dev-packages]
 
