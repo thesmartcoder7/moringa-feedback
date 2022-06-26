@@ -1,5 +1,5 @@
 from flask import redirect, url_for, session, request, flash
-from ...app import db
+from .. import db
 from . import main
 from ..models import Feedback, FeedbackComment, Question, QuestionComment, ShoutOut, ShoutOutComment, User
 from werkzeug.security import generate_password_hash, check_password_hash
