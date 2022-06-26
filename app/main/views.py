@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for, request, session
 from . import main
-from app.models import Feedback, FeedbackComment, Question, QuestionComment, ShoutOut, ShoutOutComment, User
+from ..models import Feedback, FeedbackComment, Question, QuestionComment, ShoutOut, ShoutOutComment, User
 
 
 @main.route('/')
