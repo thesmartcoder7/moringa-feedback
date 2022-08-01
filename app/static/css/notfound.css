@@ -45,6 +45,14 @@ h1 {
   letter-spacing: 1vw;
   color: #fa510f;
 }
+@media (max-width: 500px) {
+  h1 {
+    font-size: 25vw;
+    font-weight: 900;
+    letter-spacing: 1vw;
+    color: #fa510f;
+  }
+}
 
 h2 {
   font-size: 1.5vw;
@@ -52,6 +60,36 @@ h2 {
   letter-spacing: 0.05vw;
   margin-bottom: 5%;
   color: #dcdddd;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  h2 {
+    font-size: 2.5vw;
+    font-weight: 700;
+    letter-spacing: 0.05vw;
+    margin-bottom: 5%;
+    color: #dcdddd;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  h2 {
+    font-size: 3vw;
+    font-weight: 700;
+    letter-spacing: 0.05vw;
+    margin-bottom: 5%;
+    color: #dcdddd;
+  }
+}
+@media (max-width: 500px) {
+  h2 {
+    text-align: center;
+    width: 70%;
+    font-size: 4vw;
+    font-weight: 700;
+    letter-spacing: 0.05vw;
+    line-height: 7vw;
+    margin-bottom: 5%;
+    color: #dcdddd;
+  }
 }
 
 a {
@@ -64,59 +102,57 @@ a {
   border: none;
   border-radius: 0.3vw;
 }
-
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
-  p {
-    font-size: 1.1vw;
-    letter-spacing: 0.02vw;
-    line-height: 1.5vw;
-  }
-
-  body {
-    background-image: url("../images/background.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: solid 0.1vw #1a2b4b;
-  }
-
-  h1 {
-    font-size: 15vw;
-    font-weight: 900;
-    letter-spacing: 1vw;
-    color: #fa510f;
-  }
-
-  h2 {
-    font-size: 1.5vw;
-    font-weight: 700;
-    letter-spacing: 0.05vw;
-    margin-bottom: 5%;
-    color: #dcdddd;
-  }
-
+@media (min-width: 769px) and (max-width: 1024px) {
   a {
     color: #fff;
     background-color: #fa510f;
     padding: 1% 2%;
-    font-size: 1vw;
+    font-size: 2vw;
     text-decoration: none;
     outline: none;
     border: none;
     border-radius: 0.3vw;
   }
 }
+@media (min-width: 501px) and (max-width: 768px) {
+  a {
+    color: #fff;
+    background-color: #fa510f;
+    padding: 1% 2%;
+    font-size: 2.5vw;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 0.3vw;
+  }
+}
+@media (max-width: 500px) {
+  a {
+    color: #fff;
+    background-color: #fa510f;
+    padding: 3% 4%;
+    font-size: 3.5vw;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 1vw;
+  }
+}
+
+/* @media (max-width: 500px) {
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+}
+
+@media (min-width: 1921px) {
+} */
