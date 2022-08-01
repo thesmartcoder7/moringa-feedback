@@ -1,5 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
 
+/* @media (max-width: 500px) {
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+}
+
+@media (min-width: 1921px) {
+} */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,6 +34,34 @@ p {
   font-size: 1vw;
   letter-spacing: 0.02vw;
   line-height: 1.5vw;
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  p {
+    font-size: 1.3vw;
+    letter-spacing: 0.02vw;
+    line-height: 1.2vw;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  p {
+    font-size: 1.7vw;
+    letter-spacing: 0.02vw;
+    line-height: 1.2vw;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  p {
+    font-size: 2.2vw;
+    letter-spacing: 0.02vw;
+    line-height: 1.2vw;
+  }
+}
+@media (max-width: 500px) {
+  p {
+    font-size: 3.9vw;
+    letter-spacing: 0.02vw;
+    line-height: 1.2vw;
+  }
 }
 
 body {
@@ -46,11 +92,41 @@ main {
   align-items: center;
   justify-content: center;
 }
+@media (max-width: 500px) {
+  #greeting {
+    margin-bottom: 10%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 #greeting h1 {
   font-size: 2.5vw;
   letter-spacing: 0.1vw;
   margin-right: 1%;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #greeting h1 {
+    font-size: 3.5vw;
+    letter-spacing: 0.1vw;
+    margin-right: 1%;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #greeting h1 {
+    font-size: 4.5vw;
+    letter-spacing: 0.1vw;
+    margin-right: 1%;
+  }
+}
+@media (max-width: 500px) {
+  #greeting h1 {
+    font-size: 6.5vw;
+    letter-spacing: 0.1vw;
+    margin-right: 1%;
+  }
 }
 
 #greeting svg {
@@ -60,14 +136,71 @@ main {
   margin-left: 1%;
   color: #fa510f;
 }
+@media (min-width: 769px) and (max-width: 1024px) {
+  #greeting svg {
+    width: 3.5vw;
+    height: 3.5vw;
+    margin-top: -4%;
+    margin-left: 1%;
+    color: #fa510f;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #greeting svg {
+    width: 4.5vw;
+    height: 4.5vw;
+    margin-top: -4%;
+    margin-left: 1%;
+    color: #fa510f;
+  }
+}
+@media (max-width: 500px) {
+  #greeting svg {
+    width: 6.5vw;
+    height: 6.5vw;
+    margin-top: -4%;
+    margin-left: 1%;
+    color: #fa510f;
+  }
+}
 
 #login {
   width: 50%;
-  height: 30vw;
+  /* height: 30vw; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #login {
+    width: 70%;
+    /* height: 30vw; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #login {
+    width: 80%;
+    /* height: 30vw; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 500px) {
+  #login {
+    width: 100%;
+    /* height: 30vw; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 
 @keyframes appear {
@@ -100,6 +233,28 @@ main {
   justify-content: flex-start;
   padding: 0 5%;
   animation: appear 1s;
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #login form {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 5%;
+    animation: appear 1s;
+  }
+}
+@media (max-width: 500px) {
+  #login form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 5%;
+    animation: appear 1s;
+  }
 }
 
 #flash {
@@ -136,6 +291,35 @@ main {
   font-size: 1vw;
 }
 
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #login form label span {
+    margin-bottom: 2%;
+    width: 100%;
+    font-size: 1.2vw;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #login form label span {
+    margin-bottom: 2%;
+    width: 100%;
+    font-size: 1.7vw;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #login form label span {
+    margin-bottom: 2%;
+    width: 100%;
+    font-size: 2.2vw;
+  }
+}
+@media (max-width: 500px) {
+  #login form label span {
+    margin-bottom: 2%;
+    width: 100%;
+    font-size: 4.2vw;
+  }
+}
+
 #login form label input {
   width: 100%;
   border: none;
@@ -144,6 +328,50 @@ main {
   padding: 2%;
   font-size: 0.9vw;
   background-color: transparent;
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #login form label input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: solid 0.1vw #fa510f;
+    padding: 2%;
+    font-size: 1.2vw;
+    background-color: transparent;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #login form label input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: solid 0.1vw #fa510f;
+    padding: 2%;
+    font-size: 1.7vw;
+    background-color: transparent;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #login form label input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: solid 0.1vw #fa510f;
+    padding: 2%;
+    font-size: 2.1vw;
+    background-color: transparent;
+  }
+}
+@media (max-width: 500px) {
+  #login form label input {
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: solid 0.1vw #fa510f;
+    padding: 3%;
+    font-size: 3.9vw;
+    background-color: transparent;
+  }
 }
 
 #login form label input::placeholder {
@@ -164,17 +392,106 @@ main {
   border: 0.1vw solid #fa510f;
 }
 
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #login form .submit {
+    cursor: pointer;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding: 3% 10%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.3vw;
+    border-radius: 0.3vw;
+    border: 0.1vw solid #fa510f;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #login form .submit {
+    cursor: pointer;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding: 3% 10%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.6vw;
+    border-radius: 0.3vw;
+    border: 0.1vw solid #fa510f;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #login form .submit {
+    cursor: pointer;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding: 3% 10%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 2.1vw;
+    border-radius: 0.3vw;
+    border: 0.1vw solid #fa510f;
+  }
+}
+@media (max-width: 500px) {
+  #login form .submit {
+    cursor: pointer;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    padding: 4% 10%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 3.9vw;
+    border-radius: 1vw;
+    border: 0.1vw solid #fa510f;
+  }
+}
+
 #login form p span {
   font-size: 0.9vw;
   cursor: pointer;
   color: #fa510f;
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+  #login form p span {
+    font-size: 1.3vw;
+    cursor: pointer;
+    color: #fa510f;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  #login form p span {
+    font-size: 1.7vw;
+    cursor: pointer;
+    color: #fa510f;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #login form p span {
+    font-size: 2.1vw;
+    cursor: pointer;
+    color: #fa510f;
+  }
+}
+@media (max-width: 500px) {
+  #login form p span {
+    font-size: 3.9vw;
+    cursor: pointer;
+    color: #fa510f;
+  }
 }
 
 #login #signup-form {
   display: none;
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1440px) {
+/* @media screen and (min-width: 1025px) and (max-width: 1440px) {
   p {
     font-size: 1.1vw;
     letter-spacing: 0.02vw;
@@ -336,4 +653,4 @@ main {
   #login #signup-form {
     display: none;
   }
-}
+} */
