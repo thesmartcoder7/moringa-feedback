@@ -309,7 +309,7 @@ main {
   .feedback-div
   .all-comments
   .comment {
-  height: 10vw;
+  max-height: 10vw;
   overflow: auto;
 }
 
@@ -771,7 +771,7 @@ main {
     .feedback-div
     .all-comments
     .comment {
-    height: 10vw;
+    max-height: 10vw;
     overflow: auto;
   }
 
