@@ -40,10 +40,18 @@ def dashboard(username):
 
     if not len(feedback_comments) != 0:
         feedback_comments = 'empty'
+    else:
+        feedback_comments.reverse()
+
     if not len(questions_comments) != 0:
         questions_comments = 'empty'
+    else:
+        questions_comments.reverse()
+
     if not len(shoutout_comments) != 0:
         shoutout_comments = 'empty'
+    else:
+        shoutout_comments.reverse()
 
 
     if user:
@@ -71,17 +79,33 @@ def staff_dashboard(username):
 
     if not len(questions)!= 0:
         questions = 'empty'
+    else:
+        questions.reverse()
+
     if not len(feedback)!= 0:
         feedback = 'empty'
+    else:
+        feedback.reverse()
+
     if not len(shoutouts) != 0:
         shoutouts = 'empty'
+    else:
+        shoutouts.reverse()
 
     if not len(feedback_comments) != 0:
         feedback_comments = 'empty'
+    else:
+        feedback_comments.reverse()
+    
     if not len(questions_comments) != 0:
         questions_comments = 'empty'
+    else:
+        questions_comments.reverse()
+
     if not len(shoutout_comments) != 0:
         shoutout_comments = 'empty'
+    else:
+        shoutout_comments.reverse()
 
         
     if user:
