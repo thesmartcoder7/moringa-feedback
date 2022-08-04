@@ -86,6 +86,14 @@
               {% for question in questions %}
               <div class="feedback-div">
                 <p class="single-feedback">{{question.content}}</p>
+                <br />
+                {% for user in users %}
+                <!--  -->
+                {% if user.id == question.user_id %}
+                <p>By: <span>{{user.name | title }}</span></p>
+                {% endif %}
+                <!-- -->
+                {% endfor %}
                 <div class="stats">
                   <div class="numbers">
                     <div class="likes">
@@ -187,6 +195,14 @@
               {% for feedback in feedback %}
               <div class="feedback-div">
                 <p class="single-feedback">{{feedback.content}}</p>
+                <br />
+                {% for user in users %}
+                <!--  -->
+                {% if user.id == feedback.user_id %}
+                <p>By: <span>{{user.name | title }}</span></p>
+                {% endif %}
+                <!-- -->
+                {% endfor %}
                 <div class="stats">
                   <div class="numbers">
                     <div class="likes">
@@ -288,6 +304,14 @@
               {% for shoutout in shoutouts%}
               <div class="feedback-div">
                 <p class="single-feedback">{{shoutout.content}}</p>
+                <br />
+                {% for user in users %}
+                <!--  -->
+                {% if user.id == shoutout.user_id %}
+                <p>By: <span>{{user.name | title }}</span></p>
+                {% endif %}
+                <!-- -->
+                {% endfor %}
                 <div class="stats">
                   <div class="numbers">
                     <div class="likes">
