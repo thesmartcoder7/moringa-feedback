@@ -31,7 +31,7 @@ class ShoutOutTest(unittest.TestCase):
 
 class UserTest(unittest.TestCase):
     def setUp(self):
-        self.sam = User( 'samuel@martins.com', 'samuel', 'simplepass')
+        self.sam = User( 'samuel@martins.com', 'samuel', 'simplepass', 'student')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.sam, User))
