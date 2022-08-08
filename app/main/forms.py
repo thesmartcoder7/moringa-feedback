@@ -22,7 +22,8 @@ def signup():
                 regex = "@([a-z\S]+)"
                 result = re.split(regex, email)
                 if result[1] == "student.moringaschool.com":
-                    new_user = User(name, email, generate_password_hash(password))
+                    role = 'student'
+                    new_user = User(name, email, generate_password_hash(password), role)
                     db.session.add(new_user)
                     db.session.commit()
                     session['username'] = name
@@ -30,7 +31,8 @@ def signup():
                     session['password'] = password
                     return redirect(url_for('main.dashboard', username=new_user.name), code=307)
                 elif result[1] == "moringaschool.com":
-                    new_user = User(name, email, generate_password_hash(password))
+                    role = 'staff'
+                    new_user = User(name, email, generate_password_hash(password), role)
                     db.session.add(new_user)
                     db.session.commit()
                     session['username'] = name

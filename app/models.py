@@ -55,11 +55,13 @@ class User(db.Model):
     email = db.Column(db.String, unique=True)
     name = db.Column(db.String)
     password = db.Column(db.String)
+    role = db.Column(db.String)
 
-    def __init__(self, name, email, password):
+    def __init__(self, name, email, password, role):
         self.name = name
         self.email = email
         self.password = password
+        self.role = role
 
     def __str__(self) -> str:
         return self.name

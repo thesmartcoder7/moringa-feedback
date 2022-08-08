@@ -6,7 +6,7 @@ init:
 	flask db init
 
 migrate:
-	flask db migrate -m "migration."
+	flask db migrate -m "migration"
 
 upgrade:
 	flask db upgrade
