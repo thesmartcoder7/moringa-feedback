@@ -172,7 +172,7 @@
                     id="comment-form"
                     method="post"
                   >
-                    <textarea name="comment" id="comment"></textarea>
+                    <textarea name="comment" id="comment" required></textarea>
                     <input type="submit" value="leave comment" />
                   </form>
                 </div>
@@ -282,7 +282,7 @@
                     id="comment-form"
                     method="post"
                   >
-                    <textarea name="comment" id="comment"></textarea>
+                    <textarea name="comment" id="comment" required></textarea>
                     <input type="submit" value="leave comment" />
                   </form>
                 </div>
@@ -392,7 +392,7 @@
                     id="comment-form"
                     method="post"
                   >
-                    <textarea name="comment" id="comment"></textarea>
+                    <textarea name="comment" id="comment" required></textarea>
                     <input type="submit" value="leave comment" />
                   </form>
                 </div>
@@ -413,13 +413,13 @@
             method="post"
           >
             <div class="selection">
-              <select id="category" name="category">
+              <select id="category" name="category" required>
                 <option value="" selected>Select Category</option>
                 <option value="questions">Questions</option>
                 <option value="feedback">Feedback</option>
                 <option value="shout outs">Shout Outs</option>
               </select>
-              <select id="about" name="about">
+              <select id="about" name="about" required>
                 <option value="" selected>Select Topic</option>
                 <option value="technical mentors">Technical Mentors</option>
                 <option value="support">Support</option>
@@ -431,6 +431,7 @@
               name="share-form"
               id="share-form"
               placeholder="Type here . . . "
+              required
             ></textarea>
             <input type="submit" value="Share" />
           </form>
