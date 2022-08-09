@@ -47,7 +47,11 @@
         </div>
         <div class="user-image">
           <div class="info">
+            {% if user.role == 'student' %}
             <p>{{user.name}} ( Student )</p>
+            {% else %}
+            <p>{{user.name}} ( Staff )</p>
+            {% endif %}
             <a href="{{url_for('main.sign_out')}}">Sign Out</a>
           </div>
           <div class="image">

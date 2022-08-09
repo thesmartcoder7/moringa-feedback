@@ -60,10 +60,8 @@ def login():
                 session['password'] = user.password
                 regex = "@([a-z\S]+)"
                 result = re.split(regex, email)
-                if result[1] == "student.moringaschool.com":
+                if result[1] == "student.moringaschool.com" or result[1] == "moringaschool.com":
                     return redirect(url_for('main.dashboard', username=user.name), code=307)
-                elif result[1] == "moringaschool.com":
-                    return redirect(url_for('main.staff_dashboard', username=user.name), code=307)
                 else:
                     flash("Please use a valid Moringa School email!", "warning")
                     return redirect(url_for('main.home'))
