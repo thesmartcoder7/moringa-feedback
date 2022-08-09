@@ -65,57 +65,57 @@ def dashboard(username):
 
 
 
-@main.route('/staff/<username>', methods=['POST', 'GET'])
-def staff_dashboard(username):
-    user = User.query.filter_by(name=username).first()
-    users = User.query.all()
-    questions = Question.query.all()
-    feedback = Feedback.query.all()
-    shoutouts = ShoutOut.query.all()
+# @main.route('/staff/<username>', methods=['POST', 'GET'])
+# def staff_dashboard(username):
+#     user = User.query.filter_by(name=username).first()
+#     users = User.query.all()
+#     questions = Question.query.all()
+#     feedback = Feedback.query.all()
+#     shoutouts = ShoutOut.query.all()
 
-    feedback_comments = FeedbackComment.query.all()
-    questions_comments = QuestionComment.query.all()
-    shoutout_comments = ShoutOutComment.query.all()
+#     feedback_comments = FeedbackComment.query.all()
+#     questions_comments = QuestionComment.query.all()
+#     shoutout_comments = ShoutOutComment.query.all()
 
-    if not len(questions)!= 0:
-        questions = 'empty'
-    else:
-        questions.reverse()
+#     if not len(questions)!= 0:
+#         questions = 'empty'
+#     else:
+#         questions.reverse()
 
-    if not len(feedback)!= 0:
-        feedback = 'empty'
-    else:
-        feedback.reverse()
+#     if not len(feedback)!= 0:
+#         feedback = 'empty'
+#     else:
+#         feedback.reverse()
 
-    if not len(shoutouts) != 0:
-        shoutouts = 'empty'
-    else:
-        shoutouts.reverse()
+#     if not len(shoutouts) != 0:
+#         shoutouts = 'empty'
+#     else:
+#         shoutouts.reverse()
 
-    if not len(feedback_comments) != 0:
-        feedback_comments = 'empty'
-    else:
-        feedback_comments.reverse()
+#     if not len(feedback_comments) != 0:
+#         feedback_comments = 'empty'
+#     else:
+#         feedback_comments.reverse()
     
-    if not len(questions_comments) != 0:
-        questions_comments = 'empty'
-    else:
-        questions_comments.reverse()
+#     if not len(questions_comments) != 0:
+#         questions_comments = 'empty'
+#     else:
+#         questions_comments.reverse()
 
-    if not len(shoutout_comments) != 0:
-        shoutout_comments = 'empty'
-    else:
-        shoutout_comments.reverse()
+#     if not len(shoutout_comments) != 0:
+#         shoutout_comments = 'empty'
+#     else:
+#         shoutout_comments.reverse()
 
         
-    if user:
-        return render_template(
-            'staff.html', user=user, users=users, questions=questions, feedback=feedback, 
-            shoutouts=shoutouts, f_comments=feedback_comments, q_comments=questions_comments, 
-            s_comments=shoutout_comments 
-            )
-    else:
-        return redirect(url_for('main.home'))
+#     if user:
+#         return render_template(
+#             'staff.html', user=user, users=users, questions=questions, feedback=feedback, 
+#             shoutouts=shoutouts, f_comments=feedback_comments, q_comments=questions_comments, 
+#             s_comments=shoutout_comments 
+#             )
+#     else:
+#         return redirect(url_for('main.home'))
 
 
     
