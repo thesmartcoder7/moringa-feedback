@@ -6,6 +6,8 @@ let upload = document.querySelector(".upload");
 let imageUpload = document.querySelector(".upload-image");
 
 let pitch_form = document.querySelector("#share-form");
+let menu_toggle = document.querySelector(".image");
+let menu = document.querySelector(".navlinks");
 
 for (let i = 0; i < links.length; i++) {
   links[i].addEventListener("click", (e) => {
@@ -58,4 +60,23 @@ for (let i = 0; i < commentToggle.length; i++) {
   });
 }
 
+menu_toggle.addEventListener("click", () => {
+  menu.style.display = "flex";
+  menu.style.animation = "menu_slide_in 0.5s";
+  menu.style.left = "0";
+  // if ((menu.style.display = "flex")) {
+  //   menu.style.display = "none";s
+  // } else {
+  //   menu.style.display = "flex";
+  // }
+});
 
+menu.addEventListener("click", () => {
+  menu.style.animation = "menu_slide_out 0.5s";
+  menu.style.left = "100%";
+  // menu.style.display = "none";
+
+  setTimeout(() => {
+    menu.style.display = "none";
+  }, 500);
+});
