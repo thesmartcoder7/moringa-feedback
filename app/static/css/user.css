@@ -87,6 +87,19 @@ main {
   justify-content: space-between;
   height: 10%;
 }
+@media (min-width: 501px) and (max-width: 768px) {
+  #header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15%;
+    padding: 3% 0;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: #101f3c;
+  }
+}
 
 #header .logo {
   width: 20%;
@@ -100,12 +113,22 @@ main {
     height: 4vw;
   }
 }
+@media (min-width: 501px) and (max-width: 768px) {
+  #header .logo img {
+    height: 6vw;
+  }
+}
 
 #header .navlinks {
   width: 60%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #header .navlinks {
+    display: none;
+  }
 }
 
 #header .navlinks ul {
@@ -169,6 +192,14 @@ main {
     justify-content: flex-end;
   }
 }
+@media (min-width: 501px) and (max-width: 768px) {
+  #header .user-image {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
 
 #header .user-image .info {
   display: flex;
@@ -190,6 +221,13 @@ main {
 @media (min-width: 769px) and (max-width: 1024px) {
   #header .user-image .info p {
     font-size: 1.4vw;
+    text-transform: capitalize;
+    letter-spacing: 0.05vw;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #header .user-image .info p {
+    font-size: 2.3vw;
     text-transform: capitalize;
     letter-spacing: 0.05vw;
   }
@@ -222,6 +260,16 @@ main {
     letter-spacing: 0.05vw;
   }
 }
+@media (min-width: 501px) and (max-width: 768px) {
+  #header .user-image .info a {
+    text-decoration: none;
+    margin-top: 0.3vw;
+    color: #fa510f;
+    font-size: 2.2vw;
+    font-weight: 600;
+    letter-spacing: 0.05vw;
+  }
+}
 
 #header .user-image .image {
   display: flex;
@@ -245,6 +293,13 @@ main {
 @media (min-width: 769px) and (max-width: 1024px) {
   #header .user-image .image img {
     width: 5vw;
+    border: solid 0.2vw #fa510f;
+    border-radius: 50%;
+  }
+}
+@media (min-width: 501px) and (max-width: 768px) {
+  #header .user-image .image img {
+    width: 8vw;
     border: solid 0.2vw #fa510f;
     border-radius: 50%;
   }
