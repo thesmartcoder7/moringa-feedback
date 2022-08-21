@@ -261,6 +261,14 @@ main {
   margin-top: -5%;
   color: #fa510f;
 }
+@media (max-width: 500px) {
+  #flash {
+    margin-top: -5%;
+    color: #fa510f;
+    padding: 0 10%;
+    line-height: 5vw;
+  }
+}
 
 #login form input:focus,
 #login form input:active {
