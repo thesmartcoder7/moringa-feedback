@@ -7,11 +7,9 @@ name = "pypi"
 flask = "*"
 python-dotenv = "*"
 flask-migrate = "*"
-psycopg2 = "*"
-gunicorn = "*"
-binary = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.10"
+python_version = "3.9"
