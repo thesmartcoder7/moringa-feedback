@@ -1,3 +1,18 @@
+"""
+    Main Application Routes and Functionality
+
+    This module contains various route functions for the main application. It handles user signup, login, and sharing functionality,
+    along with commenting on different categories (feedback, questions, shoutouts).
+
+    Functions:
+        signup(): Handles the user signup process.
+        login(): Handles the user login process.
+        share(): Handles the user sharing functionality.
+        feedback_comment(feedback_id): Handles commenting on feedback.
+        question_comment(question_id): Handles commenting on questions.
+        shoutout_comment(shoutout_id): Handles commenting on shoutouts.
+"""
+
 from flask import redirect, url_for, session, request, flash
 from .. import db
 from . import main
@@ -9,6 +24,17 @@ import re
 # user signup route function
 @main.route('/signup', methods=['POST', 'GET'])
 def signup():
+    """
+        Handle user signup process.
+
+        If the request method is POST, it checks the form data to create a new user account.
+        It validates the email to ensure it is a valid Moringa School email and assigns a role accordingly.
+        If the signup is successful, the user is redirected to the dashboard.
+        If the signup fails, appropriate flash messages are shown.
+
+        Returns:
+            redirect: Redirects the user to different routes based on the signup result.
+    """
     if request.method == 'POST':
         email = request.form['s-email']
         name = request.form['s-name']
@@ -48,6 +74,17 @@ def signup():
 # user login route function
 @main.route('/login', methods=['POST', 'GET'])
 def login():
+    """
+        Handle user login process.
+
+        If the request method is POST, it checks the form data to authenticate the user.
+        If the login is successful, the user is redirected to the dashboard.
+        If the login fails (e.g., wrong password or email not found), appropriate flash messages are shown.
+
+        Returns:
+            redirect: Redirects the user to different routes based on the login result.
+
+    """
     if request.method == 'POST':
         email = request.form['l-email']
         password = request.form['l-password']
@@ -81,6 +118,16 @@ def login():
 # user sharing route function
 @main.route('/share', methods=['POST', 'GET'])
 def share():
+    """
+        Handle user sharing functionality.
+
+        If the request method is POST, it allows users to share content in different categories (feedback, questions, shoutouts).
+        The shared content is stored in the database with the corresponding category.
+        If the sharing process is successful, the user is redirected to the dashboard.
+
+        Returns:
+            redirect: Redirects the user to different routes based on the sharing result.
+    """
     if request.method == 'POST':
         present_user = User.query.filter_by(email=session['email']).first()
         if present_user:
@@ -110,6 +157,19 @@ def share():
 # commenting functionality
 @main.route('/feedback-comment/<feedback_id>', methods=['POST', 'GET'])
 def feedback_comment(feedback_id):
+    """
+        Handle commenting on feedback.
+
+        If the request method is POST, it allows users to comment on specific feedback.
+        The comment is stored in the database with the corresponding feedback ID.
+        If the comment is successful, the user is redirected to the dashboard.
+
+        Args:
+            feedback_id (int): The ID of the feedback being commented on.
+
+        Returns:
+            redirect: Redirects the user to the dashboard.
+    """
     if request.method == 'POST':
         user = User.query.filter_by(email=session.get('email')).first()
         if request.form['comment']:
@@ -126,6 +186,19 @@ def feedback_comment(feedback_id):
 # commenting functionality
 @main.route('/question-comment/<question_id>', methods=['POST', 'GET'])
 def question_comment(question_id):
+    """
+        Handle commenting on questions.
+
+        If the request method is POST, it allows users to comment on specific questions.
+        The comment is stored in the database with the corresponding question ID.
+        If the comment is successful, the user is redirected to the dashboard.
+
+        Args:
+            question_id (int): The ID of the question being commented on.
+
+        Returns:
+            redirect: Redirects the user to the dashboard.
+    """
     if request.method == 'POST':
         user = User.query.filter_by(email=session.get('email')).first()
         if request.form['comment']:
@@ -142,6 +215,19 @@ def question_comment(question_id):
 # commenting functionality
 @main.route('/shoutout-comment/<shoutout_id>', methods=['POST', 'GET'])
 def shoutout_comment(shoutout_id):
+    """
+        Handle commenting on shoutouts.
+
+        If the request method is POST, it allows users to comment on specific shoutouts.
+        The comment is stored in the database with the corresponding shoutout ID.
+        If the comment is successful, the user is redirected to the dashboard.
+
+        Args:
+            shoutout_id (int): The ID of the shoutout being commented on.
+
+        Returns:
+            redirect: Redirects the user to the dashboard.
+    """
     if request.method == 'POST':
         user = User.query.filter_by(email=session.get('email')).first()
         if request.form['comment']:
