@@ -1,34 +1,25 @@
-# MORINGA-CONNECT
+# Moringa Connect
 
-## AUTHOR
-* BETH NDUTA
-* SAMUEL ODAK
-* KEVIN MALOMBA
-* BELINDA NTINYARI
+## Author
 
-## PROJECT DESCRIPTION
-As a user you can;
+- Samuel Martins
 
-## SETUP/INSTALLATION REQUIREMENTS
+## Installation
+
 To get acces to the code:
-Clone the repo: https://github.com/bethnduta/MORINGA-CONNECT.git
-* Go to the folder and install the requirements dc MORINGA-CONNECT pip install -r requirements.txt
-* Test the application [python 3.9 manage.py] Open the application on the browser using the localhost 127.0.0.1.5000
+Clone the repo: https://github.com/thesmartcoder7/moringa-connect.git
 
-## CURRENT BUGS
-* Currently no known bugs, in case you find one try and solve it then push the changes.
+- Go to the folder and install the requirements dc MORINGA-CONNECT pip install -r requirements.txt
+- Test the application [python 3.9 manage.py] Open the application on the browser using the localhost 127.0.0.1.5000
 
-## TECHNOLOGIES USED
-* Python3.9
-* Flask
-* Heroku
-* HTML
-* CSS
-* BOOTSTRAP
+## Bugs
 
-## SUPPORT AND CREDIT CREDENTIALS
-Incase you want to contribute to the project fork the repository and make the changes. Incase you want to brainstorm any idea concerning the project kindly keep in touch with us via; 
+- Currently no known bugs, in case you find one try and solve it then push the changes.
 
+## Technology Used
 
-# LICENSE
-MIT Copyright (c) 2022
+- Python ( Flask )
+- Heroku
+- HTML
+- CSS
+- JavaScript
