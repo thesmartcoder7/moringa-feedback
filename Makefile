@@ -16,3 +16,6 @@ migrations:
 
 test:
 	python -m tests.tests
+
+active:
+	pipenv shell

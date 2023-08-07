@@ -5,6 +5,20 @@ from ..models import Feedback, FeedbackComment, Question, QuestionComment, Shout
 
 @main.route('/')
 def home():
+    """
+        Handle requests to the root URL ('/') of the web application.
+
+        If the user is logged in (i.e., the 'username' key is present in the session), 
+        redirect the user to the dashboard page with their username as a parameter.
+
+        If the user is not logged in, render the 'index.html' template as the home page.
+
+        Returns:
+            If logged in:
+                Redirect response: Redirects the user to the dashboard page with their username.
+            If not logged in:
+                HTML page response: Renders the 'index.html' template as the home page.
+    """
     if 'username' in session:
         return redirect(url_for('main.dashboard', username=session['username']))
     else:
@@ -13,6 +27,26 @@ def home():
 
 @main.route('/user/<username>', methods=['POST', 'GET'])
 def dashboard(username):
+    """
+        Handle requests to the user dashboard page.
+
+        This function retrieves various data related to the user's dashboard, including:
+            - Information about the specified user from the database.
+            - A list of all users from the database.
+            - A list of all questions from the database.
+            - A list of all feedback items from the database.
+            - A list of all shoutouts from the database.
+            - A list of all comments on feedback items from the database.
+            - A list of all comments on questions from the database.
+            - A list of all comments on shoutouts from the database.
+
+        Parameters:
+            username (str): The username of the user whose dashboard is being accessed.
+
+        Returns:
+            This function may render the retrieved data in an appropriate template or use it to
+            perform other actions specific to the user dashboard page.
+    """
     user = User.query.filter_by(name=username).first()
     users = User.query.all()
     questions = Question.query.all()
@@ -66,6 +100,15 @@ def dashboard(username):
 
 @main.route('/logout')
 def sign_out():
+    """
+        Handle the sign-out functionality for the web application.
+
+        This function clears the session data, effectively logging out the user.
+        After clearing the session, the user is redirected to the home page.
+
+        Returns:
+            Redirect response: Redirects the user to the home page after successfully signing out.
+    """
     session.clear()
     return redirect(url_for('main.home'))
 
