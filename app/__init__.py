@@ -10,8 +10,9 @@ migrate = Migrate()
 
 def create_app():
     app = Flask(__name__)
-    app.config['SQLALCHEMY_DATABASE_URI']  = Config.DATABASE_URL
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    # app.config['SQLALCHEMY_DATABASE_URI']  = Config.DATABASE_URL
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/samuel/Projects/moringa-feedback/feedback.db'
+    # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.secret_key = Config.SECRET_KEY
 
     db.init_app(app)
@@ -23,5 +24,5 @@ def create_app():
 
     return app
 
+
 app = create_app()
-    
